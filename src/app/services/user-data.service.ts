@@ -10,9 +10,10 @@ export class UserDataService {
 
   baseUrl = 'https://reqres.in/api/users';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  get(): Observable<User[]>{
+  get(): Observable<User[]> {
     return this.http.get<any>(this.baseUrl).pipe(
       map((response) => {
         let users: User[] = [];
@@ -22,7 +23,7 @@ export class UserDataService {
     );
   }
 
-  getByID(id: number): Observable<User>{
+  getByID(id: number): Observable<User> {
     return this.http.get<any>(this.baseUrl + "/" + id).pipe(
       map((response) => {
         let data = response.data;

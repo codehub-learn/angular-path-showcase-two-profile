@@ -24,9 +24,9 @@ export class UserDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activeRoute.params.subscribe((params) =>{
+    this.activeRoute.params.subscribe((params) => {
       let id = params["id"];
-      if(id <= 0){
+      if (id <= 0) {
         this.router.navigate(["not-found"]);
       } else {
         this.userDataService.getByID(id).subscribe(user => this.user = user);

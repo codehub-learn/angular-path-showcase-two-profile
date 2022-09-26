@@ -21,7 +21,9 @@
           <td>{{user.last_name}}</td>
           <td>{{user.email}}</td>
           <td>
-            <button type="button" class="btn btn-secondary btn-sm" (click)="navigateToUserDetails(user.id)">View Details</button>
+            <button (click)="navigateToUserDetails(user.id)" class="btn btn-secondary btn-sm" type="button">View
+              Details
+            </button>
           </td>
         </tr>
         </tbody>

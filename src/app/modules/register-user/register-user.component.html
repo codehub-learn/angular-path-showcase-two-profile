@@ -5,35 +5,35 @@
     </div>
   </div>
   <br>
-  <form [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" [formGroup]="userRegistrationForm">
     <div class="row" formGroupName="fullname">
       <div class="col-6">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="First Name" formControlName="first_name">
+          <input class="form-control" formControlName="first_name" placeholder="First Name" type="text">
           <!--          <div style="color: red" *ngIf="fullname?.get('first_name')?.touched">This was touched</div>-->
           <!--<div style="color: red" *ngIf="fullname?.get('first_name')?.invalid
           && fullname?.get('first_name')?.touched">
             This field is required
           </div>-->
-          <div style="color: red" *ngIf="fullname?.get('first_name')?.hasError('required')
-          && fullname?.get('first_name')?.touched">
+          <div *ngIf="fullname?.get('first_name')?.hasError('required')
+          && fullname?.get('first_name')?.touched" style="color: red">
             This field is required
           </div>
-          <div style="color: red" *ngIf="fullname?.get('first_name')?.hasError('pattern')
-          && fullname?.get('first_name')?.touched">
+          <div *ngIf="fullname?.get('first_name')?.hasError('pattern')
+          && fullname?.get('first_name')?.touched" style="color: red">
             Numbers and symbols are not allowed
           </div>
         </div>
       </div>
       <div class="col-6">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Last Name" formControlName="last_name">
-          <div style="color: red" *ngIf="fullname?.get('last_name')?.hasError('required')
-          && fullname?.get('last_name')?.touched">
+          <input class="form-control" formControlName="last_name" placeholder="Last Name" type="text">
+          <div *ngIf="fullname?.get('last_name')?.hasError('required')
+          && fullname?.get('last_name')?.touched" style="color: red">
             This field is required
           </div>
-          <div style="color: red" *ngIf="fullname?.get('last_name')?.hasError('pattern')
-          && fullname?.get('last_name')?.touched">
+          <div *ngIf="fullname?.get('last_name')?.hasError('pattern')
+          && fullname?.get('last_name')?.touched" style="color: red">
             Numbers and symbols are not allowed
           </div>
         </div>
@@ -43,11 +43,11 @@
     <div class="row">
       <div class="col-12">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email" formControlName="email">
-          <div style="color: red" *ngIf="email?.hasError('required') && email?.touched">
+          <input class="form-control" formControlName="email" placeholder="Email" type="text">
+          <div *ngIf="email?.hasError('required') && email?.touched" style="color: red">
             This field is required
           </div>
-          <div style="color: red" *ngIf="email?.hasError('email') && email?.touched">
+          <div *ngIf="email?.hasError('email') && email?.touched" style="color: red">
             Not an email
           </div>
         </div>
@@ -59,10 +59,10 @@
         <select class="form-select" formControlName="region">
           <option *ngFor="let region of regions">{{region}}</option>
         </select>
-        <div style="color: red" *ngIf="region?.hasError('required') && region?.touched">
+        <div *ngIf="region?.hasError('required') && region?.touched" style="color: red">
           This field is required
         </div>
-        <div style="color: red" *ngIf="region?.hasError('regionProperValue') && region?.touched">
+        <div *ngIf="region?.hasError('regionProperValue') && region?.touched" style="color: red">
           Please select a proper region
         </div>
       </div>
@@ -71,19 +71,19 @@
     <div class="row">
       <div class="col-12" style="text-align: left">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="male" value="male" formControlName="gender">
+          <input class="form-check-input" formControlName="gender" id="male" type="radio" value="male">
           <label class="form-check-label" for="male">Male</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="female" value="female" formControlName="gender">
+          <input class="form-check-input" formControlName="gender" id="female" type="radio" value="female">
           <label class="form-check-label" for="male">Female</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="other" value="other" formControlName="gender">
+          <input class="form-check-input" formControlName="gender" id="other" type="radio" value="other">
           <label class="form-check-label" for="male">Other</label>
         </div>
       </div>
-      <div style="color: red" *ngIf="gender?.hasError('required') && gender?.touched">
+      <div *ngIf="gender?.hasError('required') && gender?.touched" style="color: red">
         This field is required
       </div>
     </div>
@@ -91,25 +91,25 @@
     <div class="row">
       <div class="col-12" style="text-align: left">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="receiveEmails" formControlName="receiveEmails">
+          <input class="form-check-input" formControlName="receiveEmails" id="receiveEmails" type="checkbox">
           <label class="form-check-label" for="receiveEmails">Receive Emails</label>
         </div>
       </div>
     </div>
-    <span formArrayName="telephoneNumbers" *ngFor="let telephoneNumber of telephoneNumbers.controls; let i=index">
+    <span *ngFor="let telephoneNumber of telephoneNumbers.controls; let i=index" formArrayName="telephoneNumbers">
       <br>
       <div class="row">
         <div class="col">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Telephone Number" formControlName="{{i}}">
-            <div style="color: red" *ngIf="telephoneNumberAt(i)?.hasError('required') && telephoneNumberAt(i)?.touched">
+            <input class="form-control" formControlName="{{i}}" placeholder="Telephone Number" type="text">
+            <div *ngIf="telephoneNumberAt(i)?.hasError('required') && telephoneNumberAt(i)?.touched" style="color: red">
             This field is required
           </div>
           </div>
         </div>
-        <div class="col-1" *ngIf="i > 0">
+        <div *ngIf="i > 0" class="col-1">
           <div class="form-group">
-            <button type="button" class="btn btn-danger" (click)="removeTelephoneNumber(i)">Remove</button>
+            <button (click)="removeTelephoneNumber(i)" class="btn btn-danger" type="button">Remove</button>
           </div>
         </div>
       </div>
@@ -117,17 +117,17 @@
     <br>
     <div class="row">
       <div class="col-12" style="text-align: right">
-        <button type="button" class="btn btn-outline-success" (click)="addTelephoneNumber()">Add Telephone Number
+        <button (click)="addTelephoneNumber()" class="btn btn-outline-success" type="button">Add Telephone Number
         </button>
       </div>
     </div>
     <hr>
     <div class="row">
       <div class="col-11" style="text-align: right">
-        <button type="button" class="btn btn-outline-info" (click)="setExampleValues()">Example</button>
+        <button (click)="setExampleValues()" class="btn btn-outline-info" type="button">Example</button>
       </div>
       <div class="col-1" style="text-align: right">
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button class="btn btn-primary" type="submit">Register</button>
       </div>
     </div>
   </form>

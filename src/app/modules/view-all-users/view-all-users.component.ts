@@ -12,7 +12,8 @@ export class ViewAllUsersComponent implements OnInit {
 
   users!: User[];
 
-  constructor(private userDataService: UserDataService, private router: Router) { }
+  constructor(private userDataService: UserDataService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.userDataService.get().subscribe(allUsers => {
