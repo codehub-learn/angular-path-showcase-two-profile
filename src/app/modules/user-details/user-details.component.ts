@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserDataService} from "../../services/user-data.service";
 import {User} from "../../shared/domain/user";
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-user-details',

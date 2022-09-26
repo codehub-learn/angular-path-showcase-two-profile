@@ -3,7 +3,6 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./modules/home/home.component";
 import {ViewAllUsersComponent} from "./modules/view-all-users/view-all-users.component";
 import {RegisterUserComponent} from "./modules/register-user/register-user.component";
-import {NotFoundError} from "rxjs";
 import {NotFoundErrorComponent} from "./core/not-found-error/not-found-error.component";
 import {UserDetailsComponent} from "./modules/user-details/user-details.component";
 
