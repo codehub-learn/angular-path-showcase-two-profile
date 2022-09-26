@@ -10,6 +10,8 @@ import { ViewAllUsersComponent } from './modules/view-all-users/view-all-users.c
 import { RegisterUserComponent } from './modules/register-user/register-user.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { NotFoundErrorComponent } from './core/not-found-error/not-found-error.component';
+import {HttpClientModule} from "@angular/common/http";
+import { UserDetailsComponent } from './modules/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { NotFoundErrorComponent } from './core/not-found-error/not-found-error.c
     HomeComponent,
     ViewAllUsersComponent,
     RegisterUserComponent,
-    NotFoundErrorComponent
+    NotFoundErrorComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

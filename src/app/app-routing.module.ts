@@ -5,6 +5,7 @@ import {ViewAllUsersComponent} from "./modules/view-all-users/view-all-users.com
 import {RegisterUserComponent} from "./modules/register-user/register-user.component";
 import {NotFoundError} from "rxjs";
 import {NotFoundErrorComponent} from "./core/not-found-error/not-found-error.component";
+import {UserDetailsComponent} from "./modules/user-details/user-details.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: "users",
     component: ViewAllUsersComponent
+  },
+  {
+    path: "users/:id",
+    component: UserDetailsComponent
   },
   {
     path: "registerUser",
