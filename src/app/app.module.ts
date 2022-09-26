@@ -12,6 +12,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { NotFoundErrorComponent } from './core/not-found-error/not-found-error.component';
 import {HttpClientModule} from "@angular/common/http";
 import { UserDetailsComponent } from './modules/user-details/user-details.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserDetailsComponent } from './modules/user-details/user-details.compon
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
